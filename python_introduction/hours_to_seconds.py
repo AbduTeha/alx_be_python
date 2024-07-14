@@ -1,10 +1,8 @@
-hours = 2  # Number of hours to convert
+# Define the number of hours
+hours = 2
 
-# Conversion factor (seconds in an hour)
-seconds_per_hour = 60 * 60
-
-# Calculate seconds
-seconds = hours * seconds_per_hour
+# Calculate the number of seconds
+seconds = hours * 3600
 
 # Print the result
 print(f"{hours} hour(s) is {seconds} seconds.")
