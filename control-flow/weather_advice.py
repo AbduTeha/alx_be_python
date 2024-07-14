@@ -1,12 +1,20 @@
-weather_options = ["sunny", "rainy", "cold"]  # List of valid weather conditions
+def get_weather_input():
+    weather = input("What's the weather like today? (sunny/rainy/cold): ")
+    return weather
 
-# Get user input
-user_input = input("What's the weather like today? (sunny/rainy/cold): ").lower()  # Convert to lowercase
-
-
-if user_input == "sunny":
+def provide_clothing_recommendation(weather):
+    if weather == "sunny":
         print("Wear a t-shirt and sunglasses.")
-elif user_input == "rainy":
+    elif weather == "rainy":
         print("Don't forget your umbrella and a raincoat.")
-else:  # user_input == "cold"
+    elif weather == "cold":
         print("Make sure to wear a warm coat and a scarf.")
+    else:
+        print("Sorry, I don't have recommendations for this weather.")
+
+def main():
+    weather = get_weather_input()
+    provide_clothing_recommendation(weather)
+
+if __name__ == "__main__":
+    main()
