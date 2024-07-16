@@ -1,4 +1,6 @@
+# week 7 -0
 from book_class import Book
+
 
 def main():
     # Creating an instance of Book
@@ -15,7 +17,7 @@ def main():
 
 if __name__ == "__main__":
     main()
-###
+### week 7 -1
 from library_system import Book, EBook, PrintBook, Library
 
 def main():
@@ -38,6 +40,8 @@ def main():
 if __name__ == "__main__":
     main()
 
+####
+# week 7 -1
 # Create instances of each type of book
 classic_book = Book("Pride and Prejudice", "Jane Austen")
 digital_novel = EBook("Snow Crash", "Neal Stephenson", 500)
@@ -50,3 +54,20 @@ my_library.add_book(paper_novel)
 
 # List all books in the library
 my_library.list_books()
+
+####
+# week 7 -2
+from polymorphism_demo import Shape, Rectangle, Circle
+import math
+
+def main():
+    shapes = [
+        Rectangle(10, 5),
+        Circle(7)
+    ]
+
+    for shape in shapes:
+        print(f"The area of the {shape.__class__.__name__} is: {shape.area()}")
+
+if __name__ == "__main__":
+    main()
