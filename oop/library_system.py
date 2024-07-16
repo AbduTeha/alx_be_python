@@ -1,49 +1,37 @@
 class Book:
-  """
-  Represents a base book class with title and author.
-  """
-  def __init__(self, title, author):
-    self.title = title
-    self.author = author
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
+
+    def __str__(self):
+        return f"Book: {self.title} by {self.author}"
+
 
 class EBook(Book):
-  """
-  Represents an ebook with additional file size attribute.
-  """
-  def __init__(self, title, author, file_size):
-    super().__init__(title, author)  # Call base class constructor
-    self.file_size = file_size
+    def __init__(self, title, author, file_size):
+        super().__init__(title, author)
+        self.file_size = file_size
+
+    def __str__(self):
+        return f"EBook: {self.title} by {self.author}, File Size: {self.file_size}KB"
+
 
 class PrintBook(Book):
-  """
-  Represents a print book with additional page count attribute.
-  """
-  def __init__(self, title, author, page_count):
-    super().__init__(title, author)  # Call base class constructor
-    self.page_count = page_count
+    def __init__(self, title, author, page_count):
+        super().__init__(title, author)
+        self.page_count = page_count
+
+    def __str__(self):
+        return f"PrintBook: {self.title} by {self.author}, Page Count: {self.page_count}"
+
 
 class Library:
-  """
-  Represents a library that manages a collection of books.
-  """
-  def __init__(self):
-    self.books = []
+    def __init__(self):
+        self.books = []
 
-  def add_book(self, book):
-    """
-    Adds a book instance (Book, EBook, or PrintBook) to the library.
-    """
-    self.books.append(book)
+    def add_book(self, book):
+        self.books.append(book)
 
-  def list_books(self):
-    """
-    Prints details of each book in the library.
-    """
-    for book in self.books:
-      # Leverage polymorphism to handle different book types
-      print(f"{book.title} by {book.author} ({book.__class__.__name__})")
-      # Optionally, use conditional checks for specific book types if needed
-      # if isinstance(book, EBook):
-      #   print(f"  File size: {book.file_size} MB")
-      # elif isinstance(book, PrintBook):
-      #   print(f"  Page count: {book.page_count}")
+    def list_books(self):
+        for book in self.books:
+            print(book)
